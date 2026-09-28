@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>أثر الصوت ورسم المصحف في توجيه سياق التوحيد | Sound, Script & Tawhid</title>
+<meta name="description" content="دراسة تحليلية مقارنة لسور الم والر والمر والمص وسورتي الملك والفرقان">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@400;500;700&family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f7f3ea;--paper:#fffdf8;--ink:#2b2a27;--muted:#6f6a5f;--gold:#b08d3c;--green:#1f5f4f;--green2:#2e7d68;--line:#e6dcc6;--qabd:#3b3f6b;--bast:#a4652a;--shadow:0 6px 24px rgba(60,45,10,.08)}
+body.dark{--bg:#15171a;--paper:#1d2024;--ink:#ece6d8;--muted:#a59f92;--line:#34373c;--shadow:0 6px 24px rgba(0,0,0,.4)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Tajawal',sans-serif;line-height:1.95;font-size:17px;transition:background .3s,color .3s}
+body[dir=ltr]{font-family:'Inter',sans-serif;line-height:1.75}
+body[dir=ltr] .serif{font-family:'Lora',serif}
+.serif{font-family:'Amiri',serif}
+#progress{position:fixed;top:0;inset-inline-start:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--green2));width:0;z-index:100}
+header.bar{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:.55rem 1rem;gap:.5rem}
+.brand{font-weight:700;color:var(--green);font-size:.95rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.controls{display:flex;gap:.4rem;align-items:center}
+.switch{display:flex;background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:3px}
+.switch button{border:0;background:transparent;color:var(--muted);padding:.35rem .85rem;border-radius:999px;font:inherit;font-size:.9rem;cursor:pointer;font-weight:600}
+.switch button.active{background:var(--green);color:#fff}
+.iconbtn{border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:50%;width:36px;height:36px;cursor:pointer;font-size:1rem}
+.hero{background:radial-gradient(circle at 20% 0%,#2e7d68 0,#1f5f4f 45%,#123a31 100%);color:#fdf8ea;text-align:center;padding:3.2rem 1.2rem 3.8rem;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.07) 1px,transparent 1px);background-size:18px 18px}
+.hero>*{position:relative;z-index:1}
+.hero .kicker{color:#e9d49a;letter-spacing:.05em;font-size:.9rem}
+.hero h1{font-size:clamp(1.5rem,4.8vw,2.6rem);line-height:1.5;margin:.6rem auto;max-width:900px}
+.hero h2{font-weight:400;font-size:clamp(1rem,2.8vw,1.3rem);opacity:.92;max-width:820px;margin:0 auto}
+.hero .meta{margin-top:1.2rem;font-size:.9rem;opacity:.85}
+.letters{display:flex;justify-content:center;gap:.7rem;margin-top:1.6rem;flex-wrap:wrap}
+.letters span{font-family:'Amiri',serif;font-size:1.5rem;border:1px solid rgba(233,212,154,.5);border-radius:12px;padding:.1rem .9rem;color:#f3e2b0}
+main{max-width:860px;margin:-2rem auto 3rem;padding:0 1rem;position:relative;z-index:2}
+.toc{background:var(--paper);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);margin-bottom:1.4rem}
+.toc summary{cursor:pointer;padding:.9rem 1.2rem;font-weight:700;color:var(--green)}
+.toc ol{margin:0;padding:0 2.4rem 1rem}
+.toc a{color:var(--ink);text-decoration:none}.toc a:hover{color:var(--gold)}
+section.card{background:var(--paper);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);padding:1.5rem 1.4rem;margin-bottom:1.4rem;transition:opacity .6s ease,transform .6s ease;scroll-margin-top:70px}
+body.js section.card:not(.show){opacity:0;transform:translateY(18px)}
+section.card h3{margin-top:0;color:var(--green);font-size:1.35rem;border-inline-start:4px solid var(--gold);padding-inline-start:.7rem;line-height:1.5}
+h4{color:var(--gold);margin:1.2rem 0 .4rem;font-size:1.1rem}
+.ayah{font-family:'Amiri',serif;color:var(--green2);font-size:1.12em;background:color-mix(in srgb,var(--green2) 9%,transparent);padding:0 .35rem;border-radius:6px;white-space:normal;direction:rtl;unicode-bidi:isolate}
+body.dark .ayah{color:#7fd1b9}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1rem}
+.panel{border-radius:14px;padding:1rem 1.1rem;border:1px solid var(--line)}
+.panel.qabd{background:color-mix(in srgb,var(--qabd) 8%,transparent);border-top:4px solid var(--qabd)}
+.panel.bast{background:color-mix(in srgb,var(--bast) 9%,transparent);border-top:4px solid var(--bast)}
+.panel .tag{display:inline-block;font-size:.8rem;padding:.1rem .6rem;border-radius:999px;color:#fff;margin-bottom:.4rem}
+.qabd .tag{background:var(--qabd)}.bast .tag{background:var(--bast)}
+.panel h4{margin-top:.2rem}
+.big{font-family:'Amiri',serif;font-size:2.4rem;text-align:center;margin:.2rem 0;color:var(--ink)}
+.flow{display:flex;align-items:stretch;gap:.8rem;margin-top:1rem}
+.flow .panel{flex:1}
+.arrow{font-size:1.8rem;text-align:center;color:var(--gold)}
+.abstract{font-size:1.05rem}
+.tabs{display:flex;gap:.4rem;flex-wrap:wrap;margin:.6rem 0 1rem}
+.tabs button{border:1px solid var(--line);background:var(--bg);color:var(--ink);padding:.4rem 1rem;border-radius:999px;cursor:pointer;font:inherit;font-weight:600}
+.tabs button.active{background:var(--gold);color:#fff;border-color:var(--gold)}
+.tabpane{display:none}.tabpane.active{display:block;animation:fade .4s}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.pairs{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.5rem}
+.pairs span{background:var(--bg);border:1px dashed var(--gold);border-radius:10px;padding:.25rem .7rem;font-size:.93rem}
+.refs li{margin-bottom:.8rem}.refs small{color:var(--muted)}
+footer{text-align:center;color:var(--muted);font-size:.85rem;padding:1rem 1rem 2.5rem}
+#top{position:fixed;bottom:1.1rem;inset-inline-end:1.1rem;width:44px;height:44px;border-radius:50%;border:0;background:var(--green);color:#fff;font-size:1.2rem;box-shadow:var(--shadow);cursor:pointer;opacity:0;pointer-events:none;transition:.3s}
+#top.on{opacity:1;pointer-events:auto}
+[data-lang]{display:none}
+body.ar [data-lang=ar],body.en [data-lang=en]{display:block}
+@media(max-width:640px){body{font-size:16px}.grid2{grid-template-columns:1fr}.flow{flex-direction:column}.arrow{transform:rotate(90deg)}section.card{padding:1.2rem 1rem}.brand{font-size:.82rem;max-width:40vw}.hero{padding:2.4rem 1rem 3.4rem}}
+@media print{header.bar,#top,#progress{display:none}section.card{opacity:1;transform:none;box-shadow:none}}
+</style>
+</head>
+<body class="ar" dir="rtl">
+<div id="progress"></div>
+<header class="bar">
+  <div class="brand" id="brand">الصوت ورسم المصحف</div>
+  <div class="controls">
+    <div class="switch" role="group" aria-label="Language">
+      <button id="btn-ar" class="active" onclick="setLang('ar')">عربي</button>
+      <button id="btn-en" onclick="setLang('en')">English</button>
+    </div>
+    <button class="iconbtn" id="theme" title="Theme" aria-label="Toggle theme">&#9790;</button>
+  </div>
+</header>
+
+<!-- ================= ARABIC ================= -->
+<div data-lang="ar">
+<div class="hero">
+  <div class="kicker">البحث اللغوي والبياني المشترك</div>
+  <h1 class="serif">أثر الصوت ورسم المصحف في توجيه سياق التوحيد والموضوع القرآني</h1>
+  <h2>دراسة تحليلية مقارنة لسور (الم) و(الر) والروابط الهيكلية في (المر) و(المص) وسورتي الملك والفرقان</h2>
+  <div class="meta">إعداد الباحث البارز · محرر لصالح مجلة الدراسات القرآنية المحكمة</div>
+  <div class="letters"><span>الٓمٓ</span><span>الٓر</span><span>الٓمٓر</span><span>الٓمٓصٓ</span></div>
+</div>
+<main>
+<details class="toc"><summary>فهرس المحتويات</summary><ol>
+<li><a href="#ar-abs">المستخلص</a></li><li><a href="#ar-intro">المقدمة والتأصيل العقدي</a></li><li><a href="#ar-1">الملك والفرقان</a></li><li><a href="#ar-2">سر رسم (تبارك)</a></li><li><a href="#ar-3">عائلة (الم) مقابل (الر)</a></li><li><a href="#ar-4">البنى المركبة (المر) و(المص)</a></li><li><a href="#ar-end">الخاتمة والتوصيات</a></li><li><a href="#ar-refs">المراجع</a></li></ol></details>
+
+<section class="card" id="ar-abs"><h3>المستخلص</h3><p class="abstract">تبحث هذه الدراسة في معضلة معرفية دقيقة تجمع بين علم الأصوات الفونيمية (Phonemes)، وعلم رسم المصحف العثماني، وعلم المناسبات والروابط الموضوعية بين السور والآيات. تنطلق الدراسة من فرضية مركزية مؤداها أن الحروف الفواتح المقطعة، وبنية مخارج الحروف، والحذف أو الإثبات في الرسم العثماني، ليست مجرد خيارات لغوية أو خطية آلية، بل هي "حُلّة بيانية مفصلة" تتطابق حركتها الميكانيكية والصوتية مع طبيعة التوحيد والمحور السيكولوجي السائد في السورة. ومن خلال استقراء نماذج مقارنة بين سورتي (الملك والفرقان)، وتحليل البنى الهيكلية لعوائل (الم) و(الر)، وصولاً إلى الأشكال المركبة في (المر) بسورة الرعد و(المص) بسورة الأعراف، تُثبت الدراسة وجود متلازمتين بيانيتين تحكمان السياق القرآني: متلازمة <b>"القبض والغيب"</b> ومتلازمة <b>"البسط والشهود"</b>.</p></section>
+
+<section class="card" id="ar-intro"><h3>المقدمة والتأصيل العقدي للضابط الكلي</h3>
+<p>تقوم بنية العقيدة الإسلامية على تقسيم التوحيد إلى أنواع متكاملة، يُعد أبرزها في السياق البشري العملي: توحيد الربوبية وتوحيد الألوهية. وقد اصطلح هذا البحث على صياغة "ضابط كلي محكم" لتبسيط وفهم الفروق الدقيقة بينهما مبني على اتجاه الحركة الإيمانية والكونية:</p>
+<div class="flow">
+<div class="panel bast"><span class="tag">&#8595; نزول</span><h4>ما ينزل من الله إلى عباده (مظاهر الربوبية)</h4>ويشمل كل تجليات أفعال الرب جل وعلا من خلق، وإمداد، ورزق، وتدبير، وإنزال للكتب، وتصاريف القدر والقهر.</div>
+<div class="arrow">&#8644;</div>
+<div class="panel qabd"><span class="tag">&#8593; صعود</span><h4>ما يصعد ويعود إلى الله من عباده (مظاهر الألوهية)</h4>ويشمل ردود أفعال العباد الإيمانية، وحركات قلوبهم وجوارحهم التي يتقربون بها إلى ملك الملوك من صلاة، وإخلاص، وخشية، وتوكل، ودعاء، وتنزيه.</div>
+</div>
+<p>وقد جعل القرآن الكريم توحيد الربوبية (المنزل كدليل كوني) مستلزماً لتوحيد الألوهية (الصاعد كغاية تعبدية)، وهو المنهج الحِجاجي الذي يربط ثوب السور القرآنية هندسياً.</p></section>
+
+<section class="card" id="ar-1"><h3>أولاً: الثنائية البيانية بين سورتي الملك والفرقان</h3>
+<p>يظهر التطبيق العملي للضابط الكلي بوضوح عند إجراء مقارنة هيكلية وصوتية بين سورتي الملك والفرقان:</p>
+<div class="grid2">
+<div class="panel qabd"><span class="tag">القبض والهيمنة</span><h4>سورة الملك — منظار الكون والقهر</h4>تسيطر لغة "القبض والانطواء والغيب" على السورة. فالسماوات خُلقت متراكمة ينطوي بعضها فوق بعض <span class="ayah">﴿طِبَاقًا﴾</span>، والطبيعة خاضعة مقبوضة <span class="ayah">﴿جَعَلَ لَكُمُ الْأَرْضَ ذَلُولًا﴾</span>، والطير ممسك في الهواء بصورة قهرية <span class="ayah">﴿مَا يُمْسِكُهُنَّ إِلَّا الرَّحْمَٰنُ﴾</span>. ويتجلى هذا القبض في مشهد عذاب جهنم عبر الاستدعاء الصوتي لحركة الجذب والبلع للداخل وهي صفة <b>(الشهيق)</b>: <span class="ayah">﴿إِذَا أُلْقُوا فِيهَا سَمِعُوا لَهَا شَهِيقًا وَهِيَ تَفُورُ﴾</span>.</div>
+<div class="panel bast"><span class="tag">البسط والتدبير</span><h4>سورة الفرقان — منظار الوحي والرسالة</h4>تسيطر لغة "البسط، الامتداد الأفقي، والشهود العياني". فالسماوات تُعرض بأجرامها الواضحة المبسوطة النور <span class="ayah">﴿بُرُوجًا وَجَعَلَ فِيهَا سِرَاجًا وَقَمَرًا مُّنِيرًا﴾</span>، والطبيعة تتمدد بنعم ممدودة ظاهرة كـ <b>(مدّ الظل)</b>، وإرسال الرياح بشراً، ومرج البحرين. ويتجلى هذا الامتداد صوتياً وبصرياً في مشهد الوعيد؛ فالنار بعيدة، وتطرد غيظها وصوتها للخارج وهي صفة <b>(الزفير)</b>: <span class="ayah">﴿إِذَا رَأَتْهُم مِّن مَّكَانٍ بَعِيدٍ سَمِعُوا لَهَا تَغَيُّظًا وَزَفِيرًا﴾</span>.</div>
+</div></section>
+
+<section class="card" id="ar-2"><h3>ثانياً: سر الحذف والإثبات لرسم كلمة (تبارك) وعلاقته بالوسائط</h3>
+<p>يتطابق الرسم العثماني إعجازياً مع المحور النفسي والكوني للسور، ويظهر ذلك في تباين رسم كلمة (تبارك):</p>
+<div class="grid2">
+<div class="panel qabd"><div class="big">تَبَٰرَكَ</div><h4>حذف الألف في سورة الملك</h4>كُتبت بحذف الألف لتعبر بصرياً عن انطواء عوالم الغيب والملكوت المستور، ولتدل في نفس الوقت على <b>"سقوط المسافات والوسائط"</b> عند تصعيد العبادة والدعاء (توحيد الألوهية)؛ فالانكماش الخطّي يرمز لسرعة الالتجاء ومعية القرب المطلق الخالي من العوائق.</div>
+<div class="panel bast"><div class="big">تَبَارَكَ</div><h4>إثبات الألف في سورة الفرقان</h4>كُتبت بإثبات الألف ممدودة مواكبةً لسياق البسط والظهور والنماء؛ فالرسالة والوحي والقرآن نزل مشهوداً ملموساً بين البشر في الأرض، وتدبير نعم المعاش يقتضي الامتداد والتدرج، فبُسطت الألف رسمًا لتوافق الامتداد الفعلي.</div>
+</div></section>
+
+<section class="card" id="ar-3"><h3>ثالثاً: متلازمة مخارج الحروف: عائلة (الم) مقابل عائلة (الر)</h3>
+<p>يمتد هذا التوافق الهيكلي إلى أصوات الفواتح المقطعة، حيث يشكل حرفا الميم والراء الجناحين البيانيين لتصنيف السور:</p>
+<div class="tabs" data-group="ar3"><button class="active" data-t="ar3a">سور (الم)</button><button data-t="ar3b">سور (الر)</button></div>
+<div class="tabpane active" id="ar3a"><div class="panel qabd"><div class="big">الٓمٓ</div><h4>سور (الم) ومتلازمة سورة الملك</h4>
+<p>يتميز حرف الميم شكلاً ونطقاً بـ <b>"القبض والكتم الشفوي"</b>؛ حيث ينغلق المخرج بانطباق الشفتين تماماً وينكتم الصوت ليتحول إلى غنّة داخلية. ويتسق هذا الانكتمام مع كون آية <span class="ayah">﴿الم﴾</span> تأتي في المصحف <b>آية مستقلة، مقبوضة، محصورة، ومغلقة</b>.</p>
+<p><b>الأثر الموضوعي:</b> انعكس هذا الثوب على سور (الم) المدنية (البقرة وآل عمران) لتستدعي تشريعاً وتكليفاً صارماً يقتضي كبح النفس وقبضها تعبداً طواعية <span class="ayah">﴿سَمِعْنَا وَأَطَعْنَا﴾</span> و<span class="ayah">﴿اصْبِرُوا وَصَابِرُوا﴾</span>. وانعكس على سورها المكية (العنكبوت، الروم، لقمان، السجدة) لتعرض الفتن، وبناء اليقين في الغيب، وصناعة الأئمة عبر العبادة الليلية الخفية المكتومة الصامتة.</p></div></div>
+<div class="tabpane" id="ar3b"><div class="panel bast"><div class="big">الٓر</div><h4>سور (الر) ومتلازمة سورة الفرقان</h4>
+<p>يتميز حرف الراء بـ <b>"البسط وانفتاح المخرج والتكرار"</b>؛ مما يوحي صوتياً بالانتشار والكثرة والتدفق الأفقي. وتأتي فواتح <span class="ayah">﴿الر﴾</span> <b>منفتحة ومتصلة ميكانيكياً ولغوياً بباقي الآية الأولى</b> دون انقطاع بصري.</p>
+<p><b>الأثر الموضوعي:</b> تمحورت سور (الر) (يونس، هود، يوسف، إبراهيم، الحجر) حول ربوبية الهداية، وتنزيل الكتب، والكرم، وبسط النعم المشهودة، وجاءت معظم أسمائها تحمل <b>أسماء أنبياء</b>؛ لأن الأنبياء بشر يمشون في الأسواق ويمثلون بسط الدعوة والروابط الاجتماعية (النسب والصهر)، وهو عين المحور الحِجاجي لسورة الفرقان.</p></div></div>
+</section>
+
+<section class="card" id="ar-4"><h3>رابعاً: البنى الهيكلية المركبة (المر) و(المص)</h3>
+<p>عندما أراد البناء القرآني دمج العوالم أو شحن السياق بنبرة معينة، عمد إلى الصيغ المركبة الفذة:</p>
+<div class="tabs" data-group="ar4"><button class="active" data-t="ar4a">الرعد (المر)</button><button data-t="ar4b">الأعراف (المص)</button></div>
+<div class="tabpane active" id="ar4a"><div class="panel"><div class="big">الٓمٓر</div><h4>سورة الرعد — الثيم والبرزخ الجامع</h4>
+<p>تُعد سورة الرعد الهندسة المشتركة والجسر الرابط بين عالمي (الم) و(الر). لذا جمعت فاتحتها بين الحرفين المتقابلين صوتياً وموضوعياً.</p>
+<p><b>الوسائل والأهداف:</b> تهدف السورة لبيان "الثبات والرسوخ في عالم المتغيرات" كالسيل والزبد. واستخدمت وسائل تجمع بين جلال وقبض (الم) متمثلاً في الرعد المخيف والصواعق وعلم الغيب بالرحم، وبين بسط ورحمة (الر) متمثلاً في مدّ الأرض وإرسال الرياح وطمع المطر.</p>
+<p><b>شبكة المتقابلات البديعة:</b> تتحرك السورة في زوجية مبهرة داخل الآيات:</p>
+<div class="pairs"><span>خوفاً وطمعاً</span><span>يسبح الرعد بحمده والملائكة من خيفته</span><span>من أسر القول ومن جهر به</span><span>مستخف بالليل وسارب بالنهار</span><span>يمحو الله ما يشاء ويثبت</span><span>يبسط الرزق لمن يشاء ويقدر</span></div></div></div>
+<div class="tabpane" id="ar4b"><div class="panel qabd"><div class="big">الٓمٓصٓ</div><h4>سورة الأعراف — شحنة الخصومة والخشونة</h4>
+<p>أضاف إلحاق حرف الصاد بـ (الم) كتلة طاقة صوتية خشنة تتميز بالاستعلاء والإطباق المحصور والصفير الحاد.</p>
+<p><b>الأثر البنيوي:</b> صبغ حرف الصاد سورة الأعراف بثوب من <b>الخشونة والخصومة الشرسة والشحن النفسي</b>. فتبدأ السورة بفك ضيق وعصر الصدور المتوقع <span class="ayah">﴿فَلَا يَكُن فِي صَدْرِكَ حَرَجٌ مِّنْهُ﴾</span>.</p>
+<p><b>مشاهد الشحن والخصومات:</b> تفردت السورة بأطول وأعنف خصومات ومحاجات لفظية في القرآن: خصومة إبليس ولجاجه، خصومة ولعن الطوائف المتبرئة لبعضها في النار، ووقوف أصحاب الأعراف المشحون بالترقب. وجاءت قصص الأنبياء فيها بأعلى درجات الخشونة والعذاب القاصم الحاسم (كالرجفة، والصرعة قسراً، ونتق الجبل كظلة فوق بني إسرائيل).</p></div></div>
+</section>
+
+<section class="card" id="ar-end"><h3>خاتمة وتوصيات</h3><p>تخلص الدراسة إلى أن التقسيم الحرفي والصوتي والخطّي في رسم المصحف يتبع نسقاً هندسياً تكاملياً يُفسر مقاصد السور ويوجه معاني العقيدة والتوحيد. وتوصي الدراسة الباحثين في حقل الدراسات القرآنية بتبني <b>"المنهج الفونيمي البصري المتكامل"</b> لاستنباط مقاصد السور، وعدم فصل دراسة رسم المصحف أو أسرار التجويد والأصوات عن التحليل الموضوعي والنفسي للآيات.</p></section>
+
+<section class="card" id="ar-refs"><h3>المراجع والمصادر</h3><ol class="refs">
+<li><b>ابن جني، أبو الفتح عثمان.</b> <i>الخصائص</i>. تحقيق: محمد علي النجار، دار الهدى، بيروت.<br><small>لبحث الخصائص الصوتية ومخارج الحروف ودلالتها المعنوية.</small></li>
+<li><b>الداني، أبو عمرو عثمان بن سعيد.</b> <i>المقنع في رسم مصاحف الأمصار</i>. تحقيق: محمد الصادق قمحاوي، مكتبة الكليات الأزهرية، القاهرة.<br><small>لتأصيل أسرار الحذف والإثبات في الرسم العثماني.</small></li>
+<li><b>البقاعي، برهان الدين إبراهيم بن عمر.</b> <i>نظم الدرر في تناسب الآيات والسور</i>. دار الكتب العلمية، بيروت.<br><small>لتحليل الروابط والمناسبات الهيكلية بين فواتح السور وخواتيمها.</small></li>
+<li><b>ابن عاشور، محمد الطاهر.</b> <i>تفسير التحرير والتنوير</i>. الدار التونسية للنشر، تونس.<br><small>لاستقصاء المقاصد الموضوعية لسور الملك، الفرقان، الرعد، والأعراف، وتوجيه فواتح الحروف.</small></li>
+<li><b>الزمخشري، أبو القاسم محمود بن عمر.</b> <i>الكشاف عن حقائق غوامض التنزيل</i>. دار الكتاب العربي، بيروت.<br><small>لبلاغة اللفظ والتحليل الحِجاجي والتقابل البلاغي في سورة الرعد والأعراف.</small></li>
+<li><b>السامرائي، فاضل صالح.</b> <i>لمسات بيانية في نصوص من التنزيل</i>. دار عمار، عمان.<br><small>لتأصيل أثر اختيار الفونيمات وصيغ الكلمات كـ "الشهيق والزفير" في البنية البيانية.</small></li>
+</ol></section>
+</main>
+</div>
+
+<!-- ================= ENGLISH ================= -->
+<div data-lang="en">
+<div class="hero">
+  <div class="kicker">A Joint Linguistic and Rhetorical Study</div>
+  <h1 class="serif">The Role of Sound and Qur'anic Orthography in Shaping the Context of Tawhid and Qur'anic Themes</h1>
+  <h2>A Comparative Analytical Study of the Alif-Lam-Mim and Alif-Lam-Ra Surahs, the Structural Links in Alif-Lam-Mim-Ra and Alif-Lam-Mim-Sad, and Surahs al-Mulk and al-Furqan</h2>
+  <div class="meta">Prepared by the Lead Researcher · Edited for the Peer-Reviewed Journal of Qur'anic Studies</div>
+  <div class="letters"><span>الٓمٓ</span><span>الٓر</span><span>الٓمٓر</span><span>الٓمٓصٓ</span></div>
+</div>
+<main>
+<details class="toc"><summary>Table of Contents</summary><ol>
+<li><a href="#en-abs">Abstract</a></li><li><a href="#en-intro">Introduction and Doctrinal Foundation</a></li><li><a href="#en-1">Al-Mulk and Al-Furqan</a></li><li><a href="#en-2">The Spelling of "Tabaraka"</a></li><li><a href="#en-3">The Alif-Lam-Mim vs. Alif-Lam-Ra Families</a></li><li><a href="#en-4">Compound Structures</a></li><li><a href="#en-end">Conclusion and Recommendations</a></li><li><a href="#en-refs">References</a></li></ol></details>
+
+<section class="card" id="en-abs"><h3>Abstract</h3><p class="abstract">This study examines a subtle epistemic problem that brings together phonemics, the science of the Uthmanic script (rasm) of the Mushaf, and the science of munasabat (thematic coherence between surahs and verses). It starts from a central hypothesis: the disconnected opening letters (al-huruf al-muqatta'at), the articulation points of letters, and the omission or retention of letters in the Uthmanic script are not merely mechanical linguistic or scribal choices. Rather, they form a "tailored rhetorical garment" whose articulatory and acoustic movement matches the type of tawhid and the psychological axis dominant in each surah. By comparing Surahs al-Mulk and al-Furqan, analyzing the structures of the Alif-Lam-Mim and Alif-Lam-Ra families, and examining the compound forms Alif-Lam-Mim-Ra (Surat al-Ra'd) and Alif-Lam-Mim-Sad (Surat al-A'raf), the study demonstrates two rhetorical syndromes governing Qur'anic context: the syndrome of <b>"Contraction and the Unseen"</b> (al-qabd wa al-ghayb) and the syndrome of <b>"Expansion and the Witnessed"</b> (al-bast wa al-shuhud).</p></section>
+
+<section class="card" id="en-intro"><h3>Introduction: The Doctrinal Basis of the Governing Principle</h3>
+<p>Islamic creed divides tawhid into complementary categories, the most prominent in practical human terms being Tawhid al-Rububiyyah (Oneness of Lordship) and Tawhid al-Uluhiyyah (Oneness of Worship). This study proposes a "governing principle" to simplify the fine distinction between them, based on the direction of the spiritual and cosmic movement:</p>
+<div class="flow">
+<div class="panel bast"><span class="tag">&#8595; Descending</span><h4>What descends from God to His servants (manifestations of Lordship)</h4>All the manifestations of the Lord's acts: creation, provision, sustenance, governance, the sending down of scriptures, and the workings of decree and dominion.</div>
+<div class="arrow">&#8644;</div>
+<div class="panel qabd"><span class="tag">&#8593; Ascending</span><h4>What ascends and returns to God from His servants (manifestations of Worship)</h4>The servants' responses of faith, the movements of their hearts and limbs by which they draw near to the King of kings: prayer, sincerity, reverent fear, reliance, supplication, and glorification.</div>
+</div>
+<p>The Qur'an makes Tawhid al-Rububiyyah (descending, as cosmic proof) entail Tawhid al-Uluhiyyah (ascending, as the goal of worship). This is the argumentative method that structurally binds the fabric of Qur'anic surahs.</p></section>
+
+<section class="card" id="en-1"><h3>1. The Rhetorical Duality of Surahs al-Mulk and al-Furqan</h3>
+<p>The governing principle becomes clear when the two surahs are compared structurally and phonetically:</p>
+<div class="grid2">
+<div class="panel qabd"><span class="tag">Contraction &amp; Dominion</span><h4>Surat al-Mulk: the lens of cosmos and dominion</h4>The language of "contraction, enfolding, and the unseen" dominates. The heavens are created in layers folded one over another <span class="ayah">﴿طِبَاقًا﴾</span> ("in layers"); nature is subdued and held <span class="ayah">﴿جَعَلَ لَكُمُ الْأَرْضَ ذَلُولًا﴾</span> ("He made the earth tame for you"); the birds are held in the air by His power <span class="ayah">﴿مَا يُمْسِكُهُنَّ إِلَّا الرَّحْمَٰنُ﴾</span> ("none holds them but the Most Merciful"). This contraction culminates in the scene of Hell through the sound of inward drawing and swallowing, the <b>shahiq</b> (inhaling roar): <span class="ayah">﴿إِذَا أُلْقُوا فِيهَا سَمِعُوا لَهَا شَهِيقًا وَهِيَ تَفُورُ﴾</span> ("When they are thrown into it, they will hear it inhaling as it boils up").</div>
+<div class="panel bast"><span class="tag">Expansion &amp; Governance</span><h4>Surat al-Furqan: the lens of revelation and message</h4>The language of "expansion, horizontal extension, and visible witnessing" dominates. The heavens are shown with clear, radiant bodies <span class="ayah">﴿بُرُوجًا وَجَعَلَ فِيهَا سِرَاجًا وَقَمَرًا مُّنِيرًا﴾</span> ("constellations, and placed therein a lamp and a luminous moon"); nature unfolds with visible, extended blessings such as the <b>extending of the shadow</b>, winds sent as glad tidings, and the merging of the two seas. This extension appears in the scene of warning: the Fire is far away and pushes its rage and sound outward, the <b>zafir</b> (exhaling roar): <span class="ayah">﴿إِذَا رَأَتْهُم مِّن مَّكَانٍ بَعِيدٍ سَمِعُوا لَهَا تَغَيُّظًا وَزَفِيرًا﴾</span> ("When it sees them from a distant place, they will hear its fury and roaring").</div>
+</div></section>
+
+<section class="card" id="en-2"><h3>2. The Omission and Retention of Alif in "Tabaraka"</h3>
+<p>The Uthmanic script aligns with the psychological and cosmic axis of each surah, as seen in the differing spelling of "Tabaraka" (Blessed is He):</p>
+<div class="grid2">
+<div class="panel qabd"><div class="big">تَبَٰرَكَ</div><h4>Alif omitted in Surat al-Mulk</h4>Written without the alif to visually express the enfolding of the unseen realms and the hidden dominion (malakut), and to signify the <b>"collapse of distances and intermediaries"</b> when worship and supplication ascend (Tawhid al-Uluhiyyah). The contracted script symbolizes swift refuge and absolute nearness free of obstacles.</div>
+<div class="panel bast"><div class="big">تَبَارَكَ</div><h4>Alif retained in Surat al-Furqan</h4>Written with the extended alif, matching the context of expansion, manifestation, and growth. The message, revelation, and Qur'an came down witnessed and tangible among people on earth, and the provision of worldly blessings requires extension and gradualness; so the alif is extended in writing to match the real extension.</div>
+</div></section>
+
+<section class="card" id="en-3"><h3>3. The Articulation Syndrome: Alif-Lam-Mim vs. Alif-Lam-Ra</h3>
+<p>This structural harmony extends to the sounds of the opening letters: Mim and Ra form the two rhetorical wings for classifying the surahs.</p>
+<div class="tabs" data-group="en3"><button class="active" data-t="en3a">Alif-Lam-Mim Surahs</button><button data-t="en3b">Alif-Lam-Ra Surahs</button></div>
+<div class="tabpane active" id="en3a"><div class="panel qabd"><div class="big">الٓمٓ</div><h4>The Alif-Lam-Mim surahs and the al-Mulk syndrome</h4>
+<p>The letter Mim, in shape and pronunciation, is marked by <b>"labial closure and suppression"</b>: the lips close completely and the sound is held in, becoming an internal nasal hum (ghunnah). This matches the fact that <span class="ayah">﴿الم﴾</span> stands in the Mushaf as <b>an independent, closed, self-contained verse</b>.</p>
+<p><b>Thematic effect:</b> In the Medinan Alif-Lam-Mim surahs (al-Baqarah and Al 'Imran), this garment calls for firm legislation and obligation requiring voluntary self-restraint in worship: <span class="ayah">﴿سَمِعْنَا وَأَطَعْنَا﴾</span> ("We hear and we obey") and <span class="ayah">﴿اصْبِرُوا وَصَابِرُوا﴾</span> ("Be patient and persevere"). In the Meccan ones (al-'Ankabut, al-Rum, Luqman, al-Sajdah), it presents trials, the building of certainty in the unseen, and the making of leaders through hidden, silent night worship.</p></div></div>
+<div class="tabpane" id="en3b"><div class="panel bast"><div class="big">الٓر</div><h4>The Alif-Lam-Ra surahs and the al-Furqan syndrome</h4>
+<p>The letter Ra is marked by <b>"expansion, open articulation, and repetition (takrir)"</b>, which acoustically suggests spreading, abundance, and horizontal flow. The opening <span class="ayah">﴿الر﴾</span> is <b>open and connected, articulatorily and linguistically, to the rest of the first verse</b> without visual break.</p>
+<p><b>Thematic effect:</b> The Alif-Lam-Ra surahs (Yunus, Hud, Yusuf, Ibrahim, al-Hijr) center on the Lordship of guidance, the sending down of scriptures, generosity, and the spreading of visible blessings. Most are <b>named after prophets</b>, because prophets are human beings who walk in the markets and embody the outreach of the call and social ties (lineage and marriage), which is precisely the argumentative axis of Surat al-Furqan.</p></div></div>
+</section>
+
+<section class="card" id="en-4"><h3>4. Compound Structures: Alif-Lam-Mim-Ra and Alif-Lam-Mim-Sad</h3>
+<p>When the Qur'anic structure sought to merge the two realms or charge the context with a particular tone, it used unique compound forms:</p>
+<div class="tabs" data-group="en4"><button class="active" data-t="en4a">Al-Ra'd</button><button data-t="en4b">Al-A'raf</button></div>
+<div class="tabpane active" id="en4a"><div class="panel"><div class="big">الٓمٓر</div><h4>Surat al-Ra'd: the unifying isthmus</h4>
+<p>Surat al-Ra'd is the shared architecture and bridge between the worlds of Alif-Lam-Mim and Alif-Lam-Ra, so its opening combines the two acoustically and thematically opposite letters.</p>
+<p><b>Means and aims:</b> The surah aims to show "steadfastness amid a world of change," like the torrent and its foam. It combines the majesty and contraction of Alif-Lam-Mim (the fearsome thunder, the thunderbolts, God's knowledge of what the wombs hold) with the expansion and mercy of Alif-Lam-Ra (the spreading of the earth, sending the winds, hope for rain).</p>
+<p><b>A network of striking contrasts:</b> the surah moves in pairs within its verses:</p>
+<div class="pairs"><span>In fear and in hope</span><span>The thunder glorifies His praise, and the angels out of awe of Him</span><span>Whoever conceals speech and whoever proclaims it</span><span>Hidden by night and going forth by day</span><span>God erases what He wills and confirms</span><span>He extends provision for whom He wills and restricts</span></div></div></div>
+<div class="tabpane" id="en4b"><div class="panel qabd"><div class="big">الٓمٓصٓ</div><h4>Surat al-A'raf: a charge of conflict and harshness</h4>
+<p>Adding the letter Sad to Alif-Lam-Mim introduces a harsh block of acoustic energy, marked by elevation (isti'la'), confined velarization (itbaq), and sharp whistling (safir).</p>
+<p><b>Structural effect:</b> Sad colors Surat al-A'raf with <b>harshness, fierce dispute, and psychological tension</b>. The surah opens by relieving the expected tightness of the chest: <span class="ayah">﴿فَلَا يَكُن فِي صَدْرِكَ حَرَجٌ مِّنْهُ﴾</span> ("So let there be no distress in your chest from it").</p>
+<p><b>Scenes of tension and dispute:</b> The surah contains the longest and most intense verbal disputes in the Qur'an: Iblis's dispute and obstinacy, the factions in the Fire disowning and cursing one another, and the tense waiting of the People of al-A'raf. Its stories of the prophets feature the harshest and most decisive punishments (the earthquake, being struck down, and the mountain raised like a canopy over the Children of Israel).</p></div></div>
+</section>
+
+<section class="card" id="en-end"><h3>Conclusion and Recommendations</h3><p>The study concludes that the letter-based, phonetic, and orthographic divisions in the Mushaf follow an integrated structural pattern that explains the aims of the surahs and directs the meanings of creed and tawhid. It recommends that researchers in Qur'anic studies adopt an <b>"integrated phonemic-visual approach"</b> to derive the aims of surahs, and not separate the study of the Qur'anic script or the secrets of tajwid and phonetics from the thematic and psychological analysis of the verses.</p></section>
+
+<section class="card" id="en-refs"><h3>References</h3><ol class="refs">
+<li><b>Ibn Jinni, Abu al-Fath 'Uthman.</b> <i>Al-Khasa'is</i>. Ed. Muhammad 'Ali al-Najjar. Dar al-Huda, Beirut.<br><small>On phonetic properties, articulation points, and their semantic significance.</small></li>
+<li><b>Al-Dani, Abu 'Amr 'Uthman ibn Sa'id.</b> <i>Al-Muqni' fi Rasm Masahif al-Amsar</i>. Ed. Muhammad al-Sadiq Qamhawi. Maktabat al-Kulliyyat al-Azhariyyah, Cairo.<br><small>On omission and retention in the Uthmanic script.</small></li>
+<li><b>Al-Biqa'i, Burhan al-Din Ibrahim ibn 'Umar.</b> <i>Nazm al-Durar fi Tanasub al-Ayat wa al-Suwar</i>. Dar al-Kutub al-'Ilmiyyah, Beirut.<br><small>On structural coherence between the openings and endings of surahs.</small></li>
+<li><b>Ibn 'Ashur, Muhammad al-Tahir.</b> <i>Tafsir al-Tahrir wa al-Tanwir</i>. Al-Dar al-Tunisiyyah lil-Nashr, Tunis.<br><small>On the thematic aims of al-Mulk, al-Furqan, al-Ra'd, and al-A'raf, and the opening letters.</small></li>
+<li><b>Al-Zamakhshari, Abu al-Qasim Mahmud ibn 'Umar.</b> <i>Al-Kashshaf 'an Haqa'iq Ghawamid al-Tanzil</i>. Dar al-Kitab al-'Arabi, Beirut.<br><small>On eloquence, argumentation, and rhetorical contrast in al-Ra'd and al-A'raf.</small></li>
+<li><b>Al-Samarra'i, Fadil Salih.</b> <i>Lamasat Bayaniyyah fi Nusus min al-Tanzil</i>. Dar 'Ammar, Amman.<br><small>On the effect of phoneme and word-form choice, such as shahiq and zafir, on rhetorical structure.</small></li>
+</ol></section>
+</main>
+</div>
+
+<footer><span data-lang="ar">مجلة الدراسات القرآنية المحكمة · جميع الحقوق محفوظة</span><span data-lang="en">Peer-Reviewed Journal of Qur'anic Studies · All rights reserved</span></footer>
+<button id="top" aria-label="Top">&#8593;</button>
+
+<script>
+document.body.classList.add('js');
+const brand={ar:"الصوت ورسم المصحف",en:"Sound, Script & Tawhid"};
+function setLang(l){
+  const b=document.body;b.classList.remove('ar','en');b.classList.add(l);
+  b.dir=l==='ar'?'rtl':'ltr';document.documentElement.lang=l;document.documentElement.dir=b.dir;
+  document.getElementById('btn-ar').classList.toggle('active',l==='ar');
+  document.getElementById('btn-en').classList.toggle('active',l==='en');
+  document.getElementById('brand').textContent=brand[l];
+  localStorage.setItem('lang',l);revealAll();
+}
+document.querySelectorAll('.tabs').forEach(g=>{g.querySelectorAll('button').forEach(btn=>{btn.onclick=()=>{
+  g.querySelectorAll('button').forEach(x=>{x.classList.remove('active');document.getElementById(x.dataset.t).classList.remove('active')});
+  btn.classList.add('active');document.getElementById(btn.dataset.t).classList.add('active');}})});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target)}}),{threshold:.08});
+function revealAll(){document.querySelectorAll('section.card:not(.show)').forEach(s=>io.observe(s))}
+const theme=document.getElementById('theme');
+theme.onclick=()=>{document.body.classList.toggle('dark');localStorage.setItem('dark',document.body.classList.contains('dark'))};
+if(localStorage.getItem('dark')==='true')document.body.classList.add('dark');
+const topBtn=document.getElementById('top');topBtn.onclick=()=>scrollTo({top:0,behavior:'smooth'});
+addEventListener('scroll',()=>{const h=document.documentElement;document.getElementById('progress').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';topBtn.classList.toggle('on',h.scrollTop>500)});
+document.querySelectorAll('.toc a').forEach(a=>a.addEventListener('click',()=>{const t=document.querySelector(a.getAttribute('href'));if(t)t.classList.add('show')}));
+setLang(new URLSearchParams(location.search).get('lang')||localStorage.getItem('lang')||'ar');
+</script>
+</body>
+</html>
